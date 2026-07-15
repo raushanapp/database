@@ -81,6 +81,21 @@ select firstname, lastname,state,gender,income from "customers" where (age<30 or
 
 select firstname, lastname,state,gender,income from "customers" where (age<30 or age >=50) and income > 50000 and (country='Japan' or country= 'Australia');
 
+
+-- NUll value in column then adding some other text and here how  i am handling null value in data columns
+select  coalesce(state, address2 ,'State is not  avilable in this' ,'Address not aviable') as "State","address2" from "customers" where (age<30 or age >=50) and income > 50000 and (country='Japan' or country= 'Australia') ;
+
+
+
+--  THree Value logic handling about the null
+
+select coalesce(address2, 'No Address') as "Adress2" from "customers" where address2  is null ;
+
+select  coalesce(address1 , null) as "Address2"   from "customers" where  address1  is not  null;
+
+select coalesce(lastName,'Empty')  from "customers" where (age is not null);
+
+select coalesce(lastName,'Empty') as "AGE"  from "customers" where (age=  null);
 -- Logical Operators  (AND OR NOT)
 
 
