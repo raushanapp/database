@@ -59,6 +59,28 @@ where (age between 30 and  50) and (income < 50000);
 select AVG(income) from "customers" where age between  20 and 50;
 
 
+-- this short handing writing the sql query
+select state , gender from "customers" where gender = 'F' and (state = 'OR' or state='NY');
+-- this more
+
+select state , gender from "customers" where gender = 'F' and state = 'OR'  or   gender = 'F' and state='NY';
+
+"customers" where gender = 'F' and state = 'OR'  or   gender = 'F' and state='NY';
+/*
+* DB: Store
+* Table: Customers
+* Question: 
+* Select people either under 30 or over 50 with an income above 50000
+* Include people that are 50
+* that are from either Japan or Australia
+*/
+
+
+select firstname, lastname,state,gender,income from "customers" where (age<30 or age >=50) and income > 50000;
+
+
+select firstname, lastname,state,gender,income from "customers" where (age<30 or age >=50) and income > 50000 and (country='Japan' or country= 'Australia');
+
 -- Logical Operators  (AND OR NOT)
 
 
