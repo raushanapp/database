@@ -111,6 +111,38 @@ select AVG(income) from "customers"
 where age between  30 and 50;
 
 
+/*
+* DB: Store
+* Table: customers
+* Question: How many people's zipcode have a 2 in it?.
+* Expected output: 4211 
+*/
+
+select * from "customers"
+where zip::text like '2%';
+
+
+/*
+* DB: Store
+* Table: customers
+* Question: How many people's zipcode start with 2 with the 3rd character being a 1.
+* Expected output: 109 
+*/
+
+select * from "customers"
+where zip::text like '2___3%';
+
+/*
+* DB: Store
+* Table: customers
+* Question: Which states have phone numbers starting with 302?
+* Replace null values with "No State"                                                  
+* Expected output: https://imgur.com/AVe6G4c
+*/
+
+select * from "customers"
+where zip::text like '302%';
+
 -- Logical Operators  (AND OR NOT)
 
 

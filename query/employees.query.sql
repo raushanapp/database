@@ -85,3 +85,36 @@ select  max(birth_date) from "employees";
 select * from "employees"
 where emp_no in (100001,100006,11008);
 --where emp_no = 100001 or emp_no = 100006;
+
+/* DB: Employees
+* Table: employees
+* Question: Find the age of all employees who's name starts with M.
+* Sample output: https://imgur.com/vXs4093
+* Use EXTRACT (YEAR FROM AGE(birth_date)) we will learn about this in later parts of the course
+*/
+
+select * from "employees"
+where first_name  like 'M%';
+
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: How many people's name start with A and end with R?
+* Expected output: 1846
+*/
+
+select * from "employees"
+where first_name  like 'A%R';  -- this is not return any result in employees data do end with capital letter R character,so like is case sensitive
+-- but when we ILIKE Keyword then it's work because ILIKE is  case insensitive 
+
+select * from "employees"
+where first_name  ilike 'A%R';
+
+-- count the people start with A and end with R
+select count(first_name) from "employees"
+where first_name  ilike 'A%R';
+
+
+
