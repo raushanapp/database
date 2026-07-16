@@ -96,6 +96,21 @@ select  coalesce(address1 , null) as "Address2"   from "customers" where  addres
 select coalesce(lastName,'Empty')  from "customers" where (age is not null);
 
 select coalesce(lastName,'Empty') as "AGE"  from "customers" where (age=  null);
+
+
+-- Who between the ages of 30 and 50 has an income less than 50 000?
+-- (include 30 and 50 in the results)
+
+select * from "customers"
+where age between  30 and 50;
+
+
+-- What is the average income between the ages of 20 and 50? (Including 20 and 50)
+
+select AVG(income) from "customers"
+where age between  30 and 50;
+
+
 -- Logical Operators  (AND OR NOT)
 
 
