@@ -163,3 +163,25 @@ where (extract(month from birth_date )) = 11;
 
 
 
+/*
+* DB: Employees
+* Table: employees
+* Question: Who is the oldest employee?
+*/
+
+select max(age(birth_date)) from "employees";
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: How many unique birth dates are there?
+*/
+
+select distinct birth_date from "employees";
+
+select count(distinct birth_date) from "employees";
+
+
+
+
