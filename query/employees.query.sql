@@ -116,5 +116,50 @@ where first_name  ilike 'A%R';
 select count(first_name) from "employees"
 where first_name  ilike 'A%R';
 
+/*
+* DB: Employees
+* Table: employees
+* Question: Who is the oldest employee?
+*/
+
+select max(age(birth_date))s from "employees";
+
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: Get me all the employees above 60, use the appropriate date functions
+*/
+
+SELECT AGE(birth_date), * FROM "employees"
+WHERE (extract(YEAR FROM AGE(birth_date)))
+> 60 ;
+
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: How many employees where hired in February?
+*/
+
+select count(emp_no) from "employees"
+where (extract(month from hire_date)) = 2 ;
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: How many employees were born in november?
+*/
+
+select * from "employees"
+where (extract(month from birth_date)) = 11;
+
+-- employees count in bord
+select count(emp_no ) as "NUmber of employees" from "employees"
+where (extract(month from birth_date )) = 11;
+
 
 
