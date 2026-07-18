@@ -183,5 +183,15 @@ select distinct birth_date from "employees";
 select count(distinct birth_date) from "employees";
 
 
+select first_name , last_name from "employees"
+order by first_name desc ,last_name  desc ;
+
+
+select first_name , last_name from "employees"
+order by first_name asc ,last_name  asc ;
+
+select * from "employees" order by length(employees.first_name) desc;
+
+
 
 
